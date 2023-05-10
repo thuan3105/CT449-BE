@@ -1,8 +1,8 @@
 [{
   "_id": {
-    "$oid": "643e6d6ab9585474892e438a"
+    "$oid": "645ab2adf6834753d19928ca"
   },
-  "id": "123",
+  "id": "c3434714-34af-4c67-92d8-f4d91e05fd5d",
   "name": "Trà Sen Vàng",
   "price": "45.000",
   "description": "Thức uống chinh phục những thực khách khó tính! Sự kết hợp độc đáo giữa trà Ô long, hạt sen thơm bùi và củ năng giòn tan. Thêm vào chút sữa sẽ để vị thêm ngọt ngào.",
@@ -10,29 +10,29 @@
   "averageRating": "5.0"
 },{
   "_id": {
-    "$oid": "643e6d6ab9585474892e438b"
+    "$oid": "645ab4ecf6834753d19928ce"
   },
-  "id": "234",
+  "id": "a94f33f7-40d9-4429-ab09-8661dc7cccc8",
   "name": "Trà Xoài Nhiệt Đới",
   "price": "55.000",
-  "description": "Với vị ngọt thanh, chua nhẹ đặc trưng của trái xoài nhiệt đới hài hòa cùng vị trà cao cấp \n\nvà những viên thạch ngọc trai giòn dai nhai vui miệng sẽ mang đến cho bạn một thức uống\n\nđánh bay cái nóng mùa hè!",
+  "description": "Với vị ngọt thanh, chua nhẹ đặc trưng của trái xoài nhiệt đới hài hòa cùng vị trà cao cấp \\n\\nvà những viên thạch ngọc trai giòn dai nhai vui miệng sẽ mang đến cho bạn một thức uống\\n\\nđánh bay cái nóng mùa hè!",
   "imageUrl": "https://www.highlandscoffee.com.vn/vnt_upload/product/11_2022/BR_Drink/Tra_Xoai.jpg",
   "averageRating": "5.0"
 },{
   "_id": {
-    "$oid": "643e6d6ab9585474892e438c"
+    "$oid": "645ab514f6834753d19928cf"
   },
-  "id": "345",
+  "id": "b277ae2a-7a6c-43ed-adaa-554d9ee272ff",
   "name": "Trà Mơ Sơ Ri",
-  "price": "90.00",
-  "description": "Một biến tấu đột phá giữa trái mơ và sơri Việt Nam cùng hạt chia dinh dưỡng, những viên thạch ngọc trai giòn giòn \n\ntạo nên hương vị ngọt ngào nhẹ nhàng cho bạn một buổi thưởng thức trà vui ",
+  "price": "90.000",
+  "description": "Một biến tấu đột phá giữa trái mơ và sơri Việt Nam cùng hạt chia dinh dưỡng, những viên thạch ngọc trai giòn giòn \\n\\ntạo nên hương vị ngọt ngào nhẹ nhàng cho bạn một buổi thưởng thức trà vui.",
   "imageUrl": "https://www.highlandscoffee.com.vn/vnt_upload/product/11_2022/BR_Drink/Tra_Mo_Sori.jpg",
   "averageRating": "5.0"
 },{
   "_id": {
-    "$oid": "643e6d6ab9585474892e438d"
+    "$oid": "645abbd6f6834753d19928d0"
   },
-  "id": "456",
+  "id": "0fd1f082-9568-4e94-bb3a-c564caca34bb",
   "name": "Trà Ổi Hồng",
   "price": "75.000",
   "description": "Sự kết hợp thú vị giữa chất thanh mát từ trà xanh lài cùng hương thơm nhẹ nhàng và vị chua ngọt của ổi hồng sẽ mang tới một trải nghiệm tuyệt vời!",
@@ -40,82 +40,82 @@
   "averageRating": "5.0"
 },{
   "_id": {
-    "$oid": "643e6d6ab9585474892e438e"
+    "$oid": "645abbf0f6834753d19928d1"
   },
-  "id": "567",
+  "id": "5c6d3d2f-db56-4710-b5e5-fc7f603dfb75",
   "name": "Trà Thạch Vải",
   "price": "75.000",
-  "description": "\n\nMột sự kết hợp thú vị giữa trà đen, những quả vải thơm ngon và thạch giòn khó cưỡng, mang đến thức uống tuyệt hảo!",
+  "description": "Một sự kết hợp thú vị giữa trà đen, những quả vải thơm ngon và thạch giòn khó cưỡng, mang đến thức uống tuyệt hảo!",
   "imageUrl": "https://www.highlandscoffee.com.vn/vnt_upload/product/11_2022/BR_Drink/HLC__TRA_THACH_VAI.jpg",
   "averageRating": "5.0"
 },{
   "_id": {
-    "$oid": "643e6d6ab9585474892e438f"
+    "$oid": "645abc0bf6834753d19928d2"
   },
-  "id": "678",
+  "id": "ad13072d-c9d7-420b-ac65-b6c03d298765",
   "name": "Trà Thạch Đào",
   "price": "95.000",
-  "description": "\n\nVị trà đậm đà kết hợp cùng những miếng đào thơm ngon mọng nước cùng thạch đào giòn dai. Thêm vào ít sữa để gia tăng vị béo.",
+  "description": "Vị trà đậm đà kết hợp cùng những miếng đào thơm ngon mọng nước cùng thạch đào giòn dai. Thêm vào ít sữa để gia tăng vị béo.",
   "imageUrl": "https://www.highlandscoffee.com.vn/vnt_upload/product/11_2022/BR_Drink/HLC__TRA_THACH_DAO-09.jpg",
   "averageRating": "5.0"
 },{
   "_id": {
-    "$oid": "643e6d6ab9585474892e4390"
+    "$oid": "645abc25f6834753d19928d3"
   },
-  "id": "789",
+  "id": "ae442494-a3c1-4c9e-bad7-c07b262f87cc",
   "name": "Trà Thanh Đào",
-  "price": "100.00",
-  "description": "\n\nMột trải nghiệm thú vị khác! Sự hài hòa giữa vị trà cao cấp, vị sả thanh mát và những miếng đào thơm ngon mọng nước sẽ mang đến cho bạn một thức uống tuyệt vời.",
+  "price": "100.000",
+  "description": "Một trải nghiệm thú vị khác! Sự hài hòa giữa vị trà cao cấp, vị sả thanh mát và những miếng đào thơm ngon mọng nước sẽ mang đến cho bạn một thức uống tuyệt vời.",
   "imageUrl": "https://www.highlandscoffee.com.vn/vnt_upload/product/11_2022/BR_Drink/HLC__TRA_THANH_DAO-08.jpg",
   "averageRating": "5.0"
 },{
   "_id": {
-    "$oid": "643e6d6ab9585474892e4391"
+    "$oid": "645abc43f6834753d19928d4"
   },
-  "id": "890",
+  "id": "7db81274-6a7a-43d8-b88d-3a916c678875",
   "name": "PhinDi Choco",
-  "price": "40.00",
-  "description": "\n\nPhinDi Choco - Cà phê Phin thế hệ mới với chất Phin êm hơn, kết hợp cùng Choco ngọt tan mang đến hương vị mới lạ, không thể hấp dẫn hơn!",
+  "price": "40.000",
+  "description": "PhinDi Choco - Cà phê Phin thế hệ mới với chất Phin êm hơn, kết hợp cùng Choco ngọt tan mang đến hương vị mới lạ, không thể hấp dẫn hơn!",
   "imageUrl": "https://www.highlandscoffee.com.vn/vnt_upload/product/11_2022/BR_Drink/HLC__PHINDI_CHOCO.jpg",
   "averageRating": "5.0"
 },{
   "_id": {
-    "$oid": "643e6d6ab9585474892e4392"
+    "$oid": "645abc66f6834753d19928d5"
   },
-  "id": "901",
+  "id": "e7c33e56-3c61-442b-af4c-06764aa146b5",
   "name": "PhinDi Hạnh Nhân",
-  "price": "54.00",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel enim quam. Mauris nisl tellus, fringilla sed cursus eu, convallis non diam. Mauris quis fringilla nunc. Aenean leo lacus, lobortis sit amet venenatis a, aliquet tristique erat. Etiam laoreet mauris ut dapibus tincidunt. Pellentesque non ex at nisl ornare aliquam sed non ante. Nam lobortis magna id massa cursus, sit amet condimentum metus facilisis. Donec eu tortor at est tempor cursus et sed velit. Morbi rutrum elementum est vitae fringilla. Phasellus dignissim purus turpis, ac varius enim auctor vulputate. In ullamcorper vestibulum mauris. Nulla malesuada pretium mauris, lobortis eleifend dolor iaculis vitae.",
+  "price": "54.000",
+  "description": "PhinDi Kem Sữa - Cà phê Phin thế hệ mới với chất Phin êm hơn, kết hợp cùng Kem Sữa béo ngậy mang đến hương vị mới lạ, không thể hấp dẫn hơn!",
   "imageUrl": "https://www.highlandscoffee.com.vn/vnt_upload/product/11_2022/BR_Drink/HLC__PHINDI_HANH_NHAN.jpg",
   "averageRating": "5.0"
 },{
   "_id": {
-    "$oid": "643e6d6ab9585474892e4393"
+    "$oid": "645abc7ef6834753d19928d6"
   },
-  "id": "902",
+  "id": "3adb265c-5d9c-49a1-870b-8f225f04b8a4",
   "name": "PhinDi Kem Sữa",
-  "price": "30.00",
+  "price": "30.000",
   "description": "PhinDi Kem Sữa - Cà phê Phin thế hệ mới với chất Phin êm hơn, kết hợp cùng Kem Sữa béo ngậy mang đến hương vị mới lạ, không thể hấp dẫn hơn!",
   "imageUrl": "https://www.highlandscoffee.com.vn/vnt_upload/product/11_2022/BR_Drink/HLC__PHINDI_KEM_SUA.jpg",
   "averageRating": "5.0"
 },{
   "_id": {
-    "$oid": "643e6d6ab9585474892e4394"
+    "$oid": "645abc9af6834753d19928d7"
   },
-  "id": "903",
+  "id": "806f0887-0888-46f3-9264-d90a4f82ed4e",
   "name": "Bạc Xỉu Đá",
-  "price": "230.00",
-  "description": "\n\nNếu Phin Sữa Đá dành cho các bạn đam mê vị đậm đà, thì Bạc Xỉu Đá là một sự lựa chọn nhẹ “đô\" cà phê nhưng vẫn thơm ngon, chất lừ không kém!",
+  "price": "35.000",
+  "description": "Nếu Phin Sữa Đá dành cho các bạn đam mê vị đậm đà, thì Bạc Xỉu Đá là một sự lựa chọn nhẹ “đô\\\" cà phê nhưng vẫn thơm ngon, chất lừ không kém!",
   "imageUrl": "https://www.highlandscoffee.com.vn/vnt_upload/product/11_2022/BR_Drink/HLC__BAC_XIU_DA.jpg",
   "averageRating": "5.0"
 },{
   "_id": {
-    "$oid": "643e6d6ab9585474892e4395"
+    "$oid": "645abcb3f6834753d19928d8"
   },
-  "id": "904",
+  "id": "939bd9ae-5eff-4fad-ba3c-6f25e0eca5dd",
   "name": "Mocha Macchiato",
-  "price": "180.00",
-  "description": "\n\nMột thức uống yêu thích được kết hợp bởi giữa sốt sô cô la ngọt ngào, sữa tươi và đặc biệt là cà phê espresso đậm đà mang thương hiệu Highlands Coffee. Bạn có thể tùy thích lựa chọn uống nóng hoặc dùng chung với đá.\n",
+  "price": "180.000",
+  "description": "Một thức uống yêu thích được kết hợp bởi giữa sốt sô cô la ngọt ngào, sữa tươi và đặc biệt là cà phê espresso đậm đà mang thương hiệu Highlands Coffee. Bạn có thể tùy thích lựa chọn uống nóng hoặc dùng chung với đá.",
   "imageUrl": "https://www.highlandscoffee.com.vn/vnt_upload/product/11_2022/BR_Drink/HLC__MOCHA.jpg",
   "averageRating": "5.0"
 }]

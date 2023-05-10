@@ -20,6 +20,89 @@ async function startServer() {
         res.status(500).json({ message: "Internal server error" });
       }
     });
+    app.post("/api/products", async (req, res) => {
+      try {
+        const db = client.db();
+        const product = req.body;
+        console.log(product);
+        const result = await db.collection("products").insertOne(product);
+        res.status(201).json(result.ops[0]);
+      } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Internal server error" });
+      }
+    });
+    app.patch("/api/products/:productId", async (req, res) => {
+      try {
+        const db = client.db();
+        const productId = req.params.productId;
+        const product = req.body;
+        console.log(productId);
+        console.log(product);
+        const result = await db
+          .collection("products")
+          .updateOne({ id: productId }, { $set: product });
+        if (result.modifiedCount === 0) {
+          res.status(404).json({ message: "Product not found" });
+        } else {
+          res.status(200).json({ message: "Product updated" });
+        }
+      } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Internal server error" });
+      }
+    });
+    app.get("/api/users", async (req, res) => {
+      try {
+        const db = client.db();
+        const users = await db.collection("users").find({}).toArray();
+        res.status(200).json(users);
+      } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Internal server error" });
+      }
+    });
+    app.delete("/api/users/:userId", async (req, res) => {
+      try {
+        const { userId } = req.params;
+        const db = client.db();
+        const result = await db
+          .collection("users")
+          .findOneAndDelete({ id: userId });
+        if (result.value) {
+          res
+            .status(200)
+            .json({ message: `User with ID ${userId} has been deleted` });
+        } else {
+          res.status(404).json({ message: `User with ID ${userId} not found` });
+        }
+      } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Internal server error" });
+      }
+    });
+
+    app.patch("/api/users/:userId", async (req, res) => {
+      try {
+        const db = client.db();
+        const userId = req.params.userId;
+        const user = req.body;
+        console.log(userId);
+        console.log(user);
+        const result = await db
+          .collection("users")
+          .updateOne({ id: userId }, { $set: user });
+        if (result.modifiedCount === 0) {
+          res.status(404).json({ message: "User not found" });
+        } else {
+          res.status(200).json({ message: "User updated" });
+        }
+      } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Internal server error" });
+      }
+    });
+
     app.get("/api/users/:userId/cart", async (req, res) => {
       const { userId } = req.params;
       try {
@@ -28,9 +111,11 @@ async function startServer() {
         if (!user) return res.status(404).json("Conuld not find user!");
         const products = await db.collection("products").find({}).toArray();
         const cartItemIds = user.cartItems;
-        const cartItems = cartItemIds.map((id) => {
-          console.log(id);
-          return products.find((product) => product.id === id);
+        const cartItems = cartItemIds.map((cartitem) => {
+          product = products.find(
+            (product) => product.id === cartitem.productId
+          );
+          return { product, quantity: cartitem.quantity };
         });
         res.status(200).json(cartItems);
       } catch (error) {
@@ -69,6 +154,8 @@ async function startServer() {
       try {
         const { userId } = req.params;
         const { productId } = req.body || {};
+        const quantity = "1";
+        console.log(quantity);
         if (!productId) {
           return res
             .status(400)
@@ -78,7 +165,7 @@ async function startServer() {
         await db.collection("users").updateOne(
           { id: userId },
           {
-            $addToSet: { cartItems: productId },
+            $addToSet: { cartItems: { productId, quantity: quantity } },
           },
           { upsert: true } // create a new document if it doesn't exist
         );
@@ -101,14 +188,46 @@ async function startServer() {
         await db.collection("users").updateOne(
           { id: userId },
           {
-            $pull: { cartItems: productId },
+            $pull: { cartItems: { productId: productId } },
           }
         );
         const user = await db.collection("users").findOne({ id: userId });
         const cartItemIds = user.cartItems;
         const products = await db.collection("products").find({}).toArray();
-        const cartItems = cartItemIds.map((id) =>
-          products.find((product) => product.id === id)
+        const cartItems = cartItemIds.map((cartItem) => {
+          const product = products.find(
+            (product) => product.id === cartItem.productId
+          );
+          return {
+            product,
+            quantity: cartItem.quantity,
+          };
+        });
+        res.status(200).json(cartItems);
+      } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Internal server error" });
+      }
+    });
+
+    app.patch("/api/users/:userId/cart/:productId", async (req, res) => {
+      try {
+        const { userId, productId } = req.params;
+        const { quantity } = req.body;
+        console.log(quantity);
+        const db = client.db();
+        await db
+          .collection("users")
+          .updateOne(
+            { id: userId, "cartItems.productId": productId },
+            { $set: { "cartItems.$.quantity": quantity } }
+          );
+        const user = await db.collection("users").findOne({ id: userId });
+        const cartItemIds = user.cartItems;
+        console.log(cartItemIds);
+        const products = await db.collection("products").find({}).toArray();
+        const cartItems = cartItemIds.map((item) =>
+          products.find((product) => product.id === item.productId)
         );
         res.status(200).json(cartItems);
       } catch (error) {
@@ -116,13 +235,41 @@ async function startServer() {
         res.status(500).json({ message: "Internal server error" });
       }
     });
-    app.get("/api/users/:userId/orthers", async (req, res) => {
-      const { userId } = req.params;
+
+    app.delete("/api/products/:productId", async (req, res) => {
+      try {
+        const { productId } = req.params;
+        const db = client.db();
+        const result = await db
+          .collection("products")
+          .findOneAndDelete({ id: productId });
+        if (result.value) {
+          res
+            .status(200)
+            .json({ message: `Product with ID ${productId} has been deleted` });
+        } else {
+          res
+            .status(404)
+            .json({ message: `Product with ID ${productId} not found` });
+        }
+      } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Internal server error" });
+      }
+    });
+    app.get("/api/orders", async (req, res) => {
       const db = client.db();
-      const orders = await db.collection("orthers").find({ userId }).toArray();
+      const orders = await db.collection("orders").find({}).toArray();
       res.status(200).json(orders);
     });
-    app.post("/api/users/:userId/orthers", async (req, res) => {
+
+    app.get("/api/users/:userId/orders", async (req, res) => {
+      const { userId } = req.params;
+      const db = client.db();
+      const orders = await db.collection("orders").find({ userId }).toArray();
+      res.status(200).json(orders);
+    });
+    app.post("/api/users/:userId/orders", async (req, res) => {
       const { userId } = req.params;
       const { name, email, address, cartItems, totalPrice } = req.body;
       const db = client.db();
@@ -137,7 +284,7 @@ async function startServer() {
         totalPrice: totalPrice,
         date: dateNow,
       };
-      const result = await db.collection("orthers").insertOne(order);
+      const result = await db.collection("orders").insertOne(order);
       res.status(200).json(result);
     });
     app.post(
@@ -174,6 +321,7 @@ async function startServer() {
             name: req.body.name,
             email: req.body.email,
             password: hashedPassword,
+            isAdmin: req.body.isAdmin,
             cartItems: cartItems,
           };
           const result = await db.collection("users").insertOne(newUser);
@@ -204,6 +352,7 @@ async function startServer() {
           id: user.id,
           name: user.name,
           email: user.email,
+          isAdmin: user.isAdmin,
         };
         res.status(200).json({ result });
       } catch (error) {
